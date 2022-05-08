@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="comn.css">
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <div id="logo">
+        <img src="https://sso.masaischool.com/brand_dark.svg">
+    </div>
+
+    <form id="myform" >
+        <h1>Sign Up</h1>
+      <label>Full name</label>
+        <input id="fullname"  type="text" placeholder="Enter your full name">
+        <label>Email</label>
+        <input id="email" type="text" placeholder="Enter email ">
+        <label>Password</label>
+        <input id="password" type="text" placeholder="Password">
+        <p>By signing up,I accept the Masai School<a href="null">Terms of <br>Service</a> and acknowledge the <a href="#">Privacy Policy.</a> </p>
+        <input id="btn" type="submit" value="SIGN UP" >
+        <p>Already have an account? <a href="signin.html">Sign in</a></p>
+        
+           
+        
+ 
+    </form>
+   <p>© 2022 by Masai SchoolPrivacy Policy & Terms and Conditions</p> 
+  
+
+
+</body>
+
+</html>
+<script>
+    document.querySelector("#myform").addEventListener("submit",myfun)
+
+    function myfun(){
+        event.preventDefault();
+
+        var data={
+            fullname:myform.fullname.value,
+            email:myform.email.value,
+            password:myform.password.value,
+        }
+        console.log(data)
+        localStorage.setItem("userdata",JSON.stringify(data))
+        window.location.href="signin.html"
+    }
+</script>
